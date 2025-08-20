@@ -36,15 +36,12 @@ def is_additional_page(page: fitz.Page) -> bool:
 	return False
 
 def extract_book_name(doc: fitz.Document) -> str:
-	# Try first page, fallback to filename
 	first_page = doc[0]
 	text = first_page.get_text("text").strip()
-	# Heuristic: first non-empty line
 	for line in text.splitlines():
 		line = line.strip()
 		if line and len(line.split()) > 1:
 			return sanitize_name(line)
-	# Fallback
 	return sanitize_name(os.path.splitext(os.path.basename(doc.name))[0])
 
 def process_pdf_to_folders(pdf_bytes: bytes, original_filename: str) -> Tuple[str, dict]:
@@ -60,7 +57,6 @@ def process_pdf_to_folders(pdf_bytes: bytes, original_filename: str) -> Tuple[st
 	os.makedirs(original_folder, exist_ok=True)
 	os.makedirs(modified_folder, exist_ok=True)
 
-	# Validate page numbers
 	total_pages = doc.page_count
 	numbered = []
 	unnumbered = []
