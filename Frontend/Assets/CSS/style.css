@@ -5,6 +5,9 @@ body {
   padding: 0;
 }
 
+.responseBox{
+    margin-top: 10px;
+}
 .container {
   max-width: 500px;
   margin: 60px auto;

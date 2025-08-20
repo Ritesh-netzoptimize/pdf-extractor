@@ -74,7 +74,8 @@
             }
 
             const result = await response.json();
-            showMessage("Success! PDF processed.<br><pre>" + JSON.stringify(result, null, 2) + "</pre>", "success");
+            // showMessage("Success! PDF processed.<br><pre>" + JSON.stringify(result, null, 2) + "</pre>", "success");
+            showMessage("Success! PDF processed");
         } catch (error) {
             showMessage("Error: " + error.message, "error");
         }
