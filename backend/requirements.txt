@@ -1,7 +1,7 @@
-fastapi
-uvicorn
-PyMuPDF
-python-multipart
-pydantic
-pillow
-pytesseract
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+pymupdf>=1.23.0
+pillow>=10.0.0
+pytesseract>=0.3.10
+pydantic>=2.0.0
